@@ -76,7 +76,6 @@ const mongooseUpdate = async (id, name, reps, weight, unit, date) => {
 
 const mongooseDelete = async (id) => {
   const result = await Workout.deleteOne({ _id: id });
-  console.log("CCC")
   console.log(result)
   return result.deletedCount;
 };
