@@ -5,6 +5,7 @@ const PORT = 3000;
 
 app.use(express.json());
 
+
 app.post("/exercises", (req, res) => {
   workouts
     .mongooseCreate(
@@ -33,7 +34,7 @@ app.post("/exercises", (req, res) => {
 app.get("/exercises", (req, res) => {
   workouts
     .mongooseRetrieveAll()
-    .then((workout_results) => res.send(workout_results))
+    .then((workout_results) => res.send(workout_results)) // .send(parameter) -- When the parameter is an Array or Object, Express responds with the JSON representation.
     .catch((error) => {
       console.error(error);
       res.status(500).json({
@@ -50,7 +51,8 @@ app.get("/exercises", (req, res) => {
 });
 
 app.put("/exercises/:id", (req, res) => {
-  console.log(req.params);
+
+
   workouts
     .mongooseUpdate(
       req.params.id,
@@ -60,6 +62,7 @@ app.put("/exercises/:id", (req, res) => {
       req.body.unit,
       req.body.date
     )
+
     .then((result) => {
       if (result === 1) {
         res.json({
@@ -75,6 +78,7 @@ app.put("/exercises/:id", (req, res) => {
       }
     })
     .catch((error) => {
+      console.error(error);
       console.log(error);
       res.status(500).json({
         error,
@@ -94,8 +98,9 @@ app.delete("/exercises/:id", (req, res) => {
     .mongooseDelete(req.params.id)
     .then((result) => {
       if (result === 1) {
-        res.status(204).send();
-      } else res.status(404).json({ Error: "Resource not found" });
+        res.status(204).send(); // 204 returns nothing
+      } else res.status(404).json({ Error: "Resource not found" }); // Send
+      // object converted to JSON
     })
     .catch((error) => {
       console.log(error);

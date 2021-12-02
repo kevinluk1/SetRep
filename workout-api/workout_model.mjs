@@ -57,10 +57,18 @@ const mongooseCreate = async (name, reps, weight, unit, date) => {
 
 const mongooseRetrieveAll = async () => {
   const query = Workout.find();
+  console.log(typeof query);
   return query.exec();
 };
 
 const mongooseUpdate = async (id, name, reps, weight, unit, date) => {
+  console.log(id)
+  console.log(name)
+  console.log(reps)
+  console.log(weight)
+  console.log(unit)
+  console.log(date)
+
   const result = await Workout.updateOne(
     { _id: id },
     { name: name, reps: reps, weight: weight, unit: unit, date: date }

@@ -1,12 +1,14 @@
 import React from "react";
-import DeleteButton from "./DeleteButton";
-import EditButton from "./EditButton";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { FiEdit2 } from "react-icons/fi";
 
-function Exercise({ exerciseName, removeExercises }) {
+function Exercise({ exerciseName, removeExercises, onEdit }) {
+  //individual
+  // objects of an array passed in
   return (
     <>
       <tr className="tableRows">
+
         <td>{exerciseName.name}</td>
         <td>{exerciseName.reps}</td>
         <td>{exerciseName.weight}</td>
@@ -15,7 +17,7 @@ function Exercise({ exerciseName, removeExercises }) {
         <td>
           <RiDeleteBin5Line onClick={() => removeExercises(exerciseName._id)} />
           &nbsp;&nbsp;&nbsp;
-          <EditButton />
+          <FiEdit2 onClick={() => onEdit(exerciseName)} />
         </td>
       </tr>
     </>

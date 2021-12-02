@@ -11,7 +11,7 @@
   font-size: calc(10px + 2vmin);
 
   color: #ffffff;
-  background-image: url("./image(1).png");
+  background-image: url("./gym-6266179.png");
   background-size: 100%;
 }
 
@@ -22,13 +22,17 @@ th {
   border: solid white;
 }
 
-h1 {
+h1, h2 {
   font-size: 1.5em;
   color: #fcfcfc;
   background-color: #cd4153;
   border-radius: 15px;
   opacity: 97%;
   font-style: italic;
+}
+
+h3 {
+  color: #000000;
 }
 
 tr {
@@ -38,11 +42,11 @@ tr {
   padding: 10px;
 }
 
-td{
+td {
   border: white solid 1px;
 }
 
-table{
+table {
   border-collapse: collapse;
   width: 100%;
   color: #fcfcfc;
@@ -54,16 +58,34 @@ table{
   margin-right: 50px;
 }
 
-
 button {
-    background-color: #db142f;
-    border-radius: 15px;
-    color: white;
-    opacity: 97%;
-    border-style: solid;
-    border-color: #db142f;
-    border-width: 5px;
-    padding: 1px 16px;
-    margin-top: 20px;
+  background-color: #db142f;
+  border-radius: 15px;
+  color: white;
+  opacity: 97%;
+  border-style: solid;
+  border-color: #db142f;
+  border-width: 5px;
+  padding: 10px 30px;
+  margin-top: 20px;
+  font-size: 18px;
+}
 
+#editSubmitButton {
+  margin-left: 20px;
+}
+
+.backgroundBlock {
+  background-color: rgba(77, 126, 230, 0.95);
+  padding: 20px 20px 20px 20px;
+}
+
+h3 {
+  color: white;
+}
+
+input {
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 10px;
 }

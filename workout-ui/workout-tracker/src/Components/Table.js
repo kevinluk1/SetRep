@@ -1,7 +1,12 @@
 import React from "react";
 import Exercise from "./Row";
 
-function ExercisesTable({ exercisesDbArrayOfObjects, removeExercises }) {
+function ExercisesTable({
+  exercisesDbArrayOfObjects,
+  removeExercises,
+  onEdit,
+}) {
+  console.log(typeof exercisesDbArrayOfObjects);
   return (
     <div className="exerciseTable">
       <table>
@@ -22,6 +27,7 @@ function ExercisesTable({ exercisesDbArrayOfObjects, removeExercises }) {
               exerciseName={exercise}
               key={i}
               removeExercises={removeExercises}
+              onEdit={onEdit}
             />
           </tbody>
         ))}
