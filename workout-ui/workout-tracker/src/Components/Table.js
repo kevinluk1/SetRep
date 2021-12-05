@@ -7,6 +7,7 @@ function ExercisesTable({
   onEdit,
 }) {
   console.log(typeof exercisesDbArrayOfObjects);
+
   return (
     <div className="exerciseTable">
       <table>
@@ -20,17 +21,16 @@ function ExercisesTable({
             <th>Options</th>
           </tr>
         </thead>
-
+        <tbody>
         {exercisesDbArrayOfObjects.map((exercise, i) => (
-          <tbody>
             <Exercise
-              exerciseName={exercise}
+              exerciseBeingEdited={exercise}
               key={i}
               removeExercises={removeExercises}
               onEdit={onEdit}
             />
-          </tbody>
         ))}
+        </tbody>
       </table>
     </div>
   );

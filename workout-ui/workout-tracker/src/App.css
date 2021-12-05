@@ -22,10 +22,11 @@ th {
   border: solid white;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 1.5em;
   color: #fcfcfc;
-  background-color: #cd4153;
+  background-color: #fa4757;
   border-radius: 15px;
   opacity: 97%;
   font-style: italic;
@@ -59,7 +60,7 @@ table {
 }
 
 button {
-  background-color: #db142f;
+  background-color: #fa4757;
   border-radius: 15px;
   color: white;
   opacity: 97%;
@@ -78,6 +79,22 @@ button {
 .backgroundBlock {
   background-color: rgba(77, 126, 230, 0.95);
   padding: 20px 20px 20px 20px;
+  border-radius: 15px;
+  opacity: 97%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #db142f;
+}
+
+.backgroundBlock_2 {
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+
+  border-radius: 15px;
+  opacity: 97%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #db142f;
 }
 
 h3 {
@@ -89,3 +106,16 @@ input {
   font-size: 20px;
   border-radius: 10px;
 }
+
+nav button:hover {
+  background-color: white;
+  color: #f98100;
+}
+nav button {
+  background-color: rgba(238, 237, 236, 0.95);
+
+  border-width: 1px;
+  text-decoration: none;
+}
+
+

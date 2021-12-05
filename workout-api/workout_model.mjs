@@ -62,12 +62,7 @@ const mongooseRetrieveAll = async () => {
 };
 
 const mongooseUpdate = async (id, name, reps, weight, unit, date) => {
-  console.log(id)
-  console.log(name)
-  console.log(reps)
-  console.log(weight)
-  console.log(unit)
-  console.log(date)
+
 
   const result = await Workout.updateOne(
     { _id: id },
@@ -84,7 +79,7 @@ const mongooseUpdate = async (id, name, reps, weight, unit, date) => {
 
 const mongooseDelete = async (id) => {
   const result = await Workout.deleteOne({ _id: id });
-  console.log(result)
+  console.log(result);
   return result.deletedCount;
 };
 

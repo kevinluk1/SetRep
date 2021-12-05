@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import ExercisesTable from "../Components/Table";
 
-
 function HomePage({ setWorkoutToEdit }) {
   const [results, setResults] = useState([]);
   const history = useHistory();
@@ -17,15 +16,15 @@ function HomePage({ setWorkoutToEdit }) {
     setResults(exercises);
     // exercises state variable  is an array object
   };
-  const onEdit = (_id) => {
-    console.log(_id);
-    setWorkoutToEdit(_id); // setWorkoutToEdit updates the state variable
+
+  const onEdit = (exerciseBeingEdited) => {
+    setWorkoutToEdit(exerciseBeingEdited); // setWorkoutToEdit updates the state variable
     // workoutToEdit in App.js --> this state variable is passed from
     // App.js down to EditPage.js
     history.push("/edit-exercise");
   };
 
-  // TODO: rename to onDeleteExercise
+
   const removeExercises = async (_id) => {
     let response = await fetch(`/exercises/${_id}`, { method: "DELETE" });
     if (response.status === 204) {
@@ -43,7 +42,7 @@ function HomePage({ setWorkoutToEdit }) {
   }, []); // Run as soon as the page loads
 
   return (
-    <div>
+    <div className={"backgroundBlock_2"}>
       <div>
         <h2>Kevin's Workout Tracker</h2>
       </div>

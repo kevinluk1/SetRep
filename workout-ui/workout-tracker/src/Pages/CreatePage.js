@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import GoHomeButton from "../Components/GoHomeButton";
 function CreateExercise() {
   const [exerciseName, setExerciseName] = useState("");
   const [exerciseReps, setExerciseReps] = useState("");
@@ -10,7 +10,7 @@ function CreateExercise() {
 
   const history = useHistory();
   const createExercise = async () => {
-    const createdExercise = {
+    const createdExercise = { //JS OBJECT
       name: exerciseName,
       reps: exerciseReps,
       weight: exerciseWeight,
@@ -25,8 +25,9 @@ function CreateExercise() {
     });
 
     if (response.status === 201) {
-      alert("yay");
+      alert("Added exercise");
     }
+
     history.push("/");
   };
 
@@ -74,6 +75,7 @@ function CreateExercise() {
         <br />
         <button onClick={createExercise}> Submit </button>
       </div>
+      <GoHomeButton />
     </>
   );
 }

@@ -1,10 +1,10 @@
 import * as workouts from "./workout_model.mjs";
 import express from "express";
+
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-
 
 app.post("/exercises", (req, res) => {
   workouts
@@ -34,7 +34,7 @@ app.post("/exercises", (req, res) => {
 app.get("/exercises", (req, res) => {
   workouts
     .mongooseRetrieveAll()
-    .then((workout_results) => res.send(workout_results)) // .send(parameter) -- When the parameter is an Array or Object, Express responds with the JSON representation.
+    .then((workout_results) => res.status(200).json(workout_results)) // .send(parameter) -- When the parameter is an Array or Object, Express responds with the JSON representation.
     .catch((error) => {
       console.error(error);
       res.status(500).json({
@@ -51,8 +51,6 @@ app.get("/exercises", (req, res) => {
 });
 
 app.put("/exercises/:id", (req, res) => {
-
-
   workouts
     .mongooseUpdate(
       req.params.id,
@@ -64,7 +62,7 @@ app.put("/exercises/:id", (req, res) => {
     )
 
     .then((result) => {
-      if (result === 1) {
+      if (result === 1) {  //documents modified returns 1 or 0
         res.json({
           id: req.params.id,
           name: req.body.name,
@@ -74,7 +72,7 @@ app.put("/exercises/:id", (req, res) => {
           date: req.body.date,
         });
       } else {
-        res.send("Property Matched, but nothing was updated");
+        res.status(200).json("Property matched, but nothing was updated");
       }
     })
     .catch((error) => {
@@ -98,8 +96,8 @@ app.delete("/exercises/:id", (req, res) => {
     .mongooseDelete(req.params.id)
     .then((result) => {
       if (result === 1) {
-        res.status(204).send(); // 204 returns nothing
-      } else res.status(404).json({ Error: "Resource not found" }); // Send
+        res.status(204).send(); // 204 returns nothing in the body
+      } else res.status(404).json({ Error: "Resource does not exist" }); // Send
       // object converted to JSON
     })
     .catch((error) => {

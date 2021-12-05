@@ -33,7 +33,7 @@ content-type: application/json
 
 {
     "name": "Deadlift",
-    "reps": 122222222,
+    "reps": 122,
     "weight": 1082423301,
     "unit": "lbs",
     "date": "06-25-21"
