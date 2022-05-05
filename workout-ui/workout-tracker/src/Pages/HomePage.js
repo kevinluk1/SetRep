@@ -44,7 +44,7 @@ function HomePage({ setWorkoutToEdit }) {
   return (
     <div className={"backgroundBlock_2"}>
       <div>
-        <h2>Kevin's Workout Tracker</h2>
+        <h2>SetRep, the Online Workout Tracker!</h2>
       </div>
       <ExercisesTable
         exercisesDbArrayOfObjects={results}

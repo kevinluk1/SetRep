@@ -62,8 +62,6 @@ const mongooseRetrieveAll = async () => {
 };
 
 const mongooseUpdate = async (id, name, reps, weight, unit, date) => {
-
-
   const result = await Workout.updateOne(
     { _id: id },
     { name: name, reps: reps, weight: weight, unit: unit, date: date }
