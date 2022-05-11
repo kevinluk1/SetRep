@@ -1,7 +1,8 @@
 SetRep!
 
-Simple Workout Tracker CRUD SPA app with React and Material-UI. Currently using a local instance of MongoDB for persistent data storage.
 Track your workouts with ease.
+
+This is a simple workout tracker CRUD app created with React and Material-UI. Currently using a local instance of MongoDB for persistent data storage.
 Will be eventually deployed to Heroku.
 
 
