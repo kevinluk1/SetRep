@@ -1,4 +1,4 @@
-SetRep!
+SetRep, the Online Workout Tracker!
 
 Track your workouts with ease.
 
