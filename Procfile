@@ -1,1 +1,1 @@
-web: workout_controller.mjs
+web: node workout_controller.mjs
