@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node workout_controller.mjs"
+    "start": "node ./workout-api/workout_controller.mjs"
   },
   "author": "",
   "license": "ISC",
