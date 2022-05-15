@@ -115,6 +115,11 @@ app.delete("/exercises/:id", (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
+// app.listen(PORT, () => {
+//   console.log(`Server listening on port ${PORT}...`);
+// });
+
+
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Server listening on port ${PORT}...`);
 });

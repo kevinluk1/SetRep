@@ -6,9 +6,16 @@ import mongoose from "mongoose";
  * document(table) is created
  */
 
-mongoose.connect("mongodb://localhost:27017/workout_db", {
+// mongoose.connect("mongodb://localhost:27017/workout_db", {
+//   useNewUrlParser: true,
+// });
+
+
+
+mongoose.connect("mongodb+srv://kevinluk:284607abc@cluster0.xutjn.mongodb.net/test?retryWrites=true&w=majority/workout_db", {
   useNewUrlParser: true,
 });
+
 
 const db = mongoose.connection;
 
