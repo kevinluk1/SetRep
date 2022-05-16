@@ -1,1 +1,1 @@
-web: node workout_controller.mjs
+web: npm start
